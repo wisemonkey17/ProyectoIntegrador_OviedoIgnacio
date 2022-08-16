@@ -1,7 +1,10 @@
 .row {
-    padding: 30px 25px 0;
+    padding: 15px 0 0;
+    margin: 0;
 }
 
 div {
     text-align: justify;
+    background-color: #d3d3d3;
 }
+
