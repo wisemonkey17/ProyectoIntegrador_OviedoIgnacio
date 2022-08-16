@@ -1,0 +1,20 @@
+.row {
+    background: #708090;
+}
+
+footer{
+    min-height: 100px;
+	padding: 20px 50px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+}
+
+footer p {
+	color: black;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	font-size: 1.1em;
+}
