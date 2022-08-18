@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.portfolio.OIA.Security;
 
 import com.portfolio.OIA.Security.Service.UserDetailsImpl;
@@ -15,11 +11,12 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -43,12 +40,13 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
-        .authorizeRequests().antMatchers("auth/**").permitAll()
-        .anyRequest().authenticated()
-        .and()
-        .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
-        .and()
-        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+            .exceptionHandling().authenticationEntryPoint(jwtEntryPoint).and()
+            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+            .authorizeRequests().antMatchers("**").permitAll()
+            .antMatchers("**").permitAll()
+            .anyRequest().authenticated();
+        
+        http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override
@@ -56,6 +54,7 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
         return super.authenticationManager();
     }
 
+    @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
