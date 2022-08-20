@@ -23,7 +23,8 @@
           <li class="nav-item">
             <a class="nav-link" href="#"><img src="../../../assets/twitter.png" id="twitter"></a>
           </li>
-          <button type="button" class="btn btn-outline-light" (click)="login()">Ingreso</button>
+          <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Ingreso</button>
+          <button type="button" class="btn btn-outline-light" (click)="onLogOut()"*ngIf="isLogged">Cerrar Sesion</button>
         </ul>
       </div>
     </div>
