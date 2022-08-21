@@ -23,6 +23,6 @@ export class InterceptorService {
 
 export const interceptorProvider = [{
     provide: HTTP_INTERCEPTORS,
-    userClass: InterceptorService,
+    useClass: InterceptorService,
     multi: true
 }];
