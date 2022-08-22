@@ -10,3 +10,11 @@ div {
 h2,h3 {
     display: inline;
 }
+
+.container-fluid{
+    border-top: 1px dashed #708090;
+}
+
+td{
+    border-color: #708090;
+}

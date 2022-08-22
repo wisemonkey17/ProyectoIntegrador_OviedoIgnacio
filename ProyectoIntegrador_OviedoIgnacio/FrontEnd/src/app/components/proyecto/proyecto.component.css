@@ -18,3 +18,7 @@ div {
     display: block;
     margin: auto;
 }
+
+.container-fluid{
+    border-top: 1px dashed #708090;
+}

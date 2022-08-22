@@ -1,5 +1,5 @@
 .row {
-    background: #708090;
+    background-image: linear-gradient(to top, #708090, #8b93a1, #a4a8b1, #bcbdc2, #d3d3d3);
 }
 
 footer{
@@ -12,7 +12,7 @@ footer{
 }
 
 footer p {
-	color: white;
+	color: black;
 	text-align: center;
 	margin-top: 15px;
 	margin-bottom: 10px;

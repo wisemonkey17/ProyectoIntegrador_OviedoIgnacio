@@ -7,3 +7,7 @@
 div {
     background-color: #d3d3d3;
 }
+
+.container-fluid{
+    border-top: 1px dashed #708090;
+}
