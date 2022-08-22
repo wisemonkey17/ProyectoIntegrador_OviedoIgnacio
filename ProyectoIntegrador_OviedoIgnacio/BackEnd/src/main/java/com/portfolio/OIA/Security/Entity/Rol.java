@@ -23,8 +23,8 @@ public class Rol {
     public Rol() {
     }
 
-    public Rol(RolNombre ronnombre) {
-        this.rolNombre = ronnombre;
+    public Rol(RolNombre rolNombre) {
+        this.rolNombre = rolNombre;
     }
     
     //Getter & Setter
