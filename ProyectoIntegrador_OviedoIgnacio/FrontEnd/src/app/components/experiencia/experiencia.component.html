@@ -1,11 +1,6 @@
 <div class="container-fluid">
     <div class="row">
         <h1>Experiencia laboral</h1>
-        <div class="col-md-2">
-            <button type="button" class="btn btn-dark" routerLink="nuevaexp" *ngIf="isLogged">
-                Nueva Experiencia
-            </button>
-        </div>
         <div class="col-md-1"></div>
         <div class="col-md-11">
             <table class="table">
@@ -13,11 +8,16 @@
                     <tr *ngFor="let Experiencia of expe">
                         <td><h4>{{Experiencia.nombreE}}</h4></td>
                         <td>{{Experiencia.descripcionE}}</td>
-                        <td *ngIf="isLogged"><button class="btn btn-primary" routerLink="/editexp/{{Experiencia.id}}">Editar <i class="bi bi-pencil-square"></i></button></td>
-                        <td *ngIf="isLogged"><button class="btn btn-danger" (click)="delete(Experiencia.id)">Borrar <i class="bi bi-trash"></i></button></td>
+                        <td *ngIf="isLogged"><button class="btn btn-outline-secondary" routerLink="/editexp/{{Experiencia.id}}">Editar <i class="bi bi-pencil-square"></i></button></td>
+                        <td *ngIf="isLogged"><button class="btn btn-outline-danger" (click)="delete(Experiencia.id)">Borrar <i class="bi bi-trash"></i></button></td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="button" class="btn btn-outline-primary" routerLink="nuevaexp" *ngIf="isLogged">
+                Agregar Experiencia
+            </button>
         </div>
     </div>
 </div>
