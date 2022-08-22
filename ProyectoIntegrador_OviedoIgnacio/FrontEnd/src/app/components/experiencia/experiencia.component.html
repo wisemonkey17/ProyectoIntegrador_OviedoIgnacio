@@ -11,10 +11,10 @@
             <table class="table">
                 <tbody>
                     <tr *ngFor="let Experiencia of expe">
-                        <td>{{Experiencia.nombreE}}</td>
+                        <td><h4>{{Experiencia.nombreE}}</h4></td>
                         <td>{{Experiencia.descripcionE}}</td>
-                        <td>Editar</td>
-                        <td>Borrar</td>
+                        <td *ngIf="isLogged"><button class="btn btn-primary" routerLink="/editexp/{{Experiencia.id}}">Editar <i class="bi bi-pencil-square"></i></button></td>
+                        <td *ngIf="isLogged"><button class="btn btn-danger" (click)="delete(Experiencia.id)">Borrar <i class="bi bi-trash"></i></button></td>
                     </tr>
                 </tbody>
             </table>
